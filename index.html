@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LG Cool Store • CSS Styleguide</title>
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="../css/styleguide.css">
+  <link rel="stylesheet" href="../css/gridsystem.css">
+  <link rel="stylesheet" href="../css/storetheme.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container display-flex">
+      <div class="flex-none">
+        <h1>LG Cool Store Styleguide</h1>
+      </div>
+      <div class="flex-stretch"></div>
+      <nav class="flex-none nav nav-flex">
+        <ul class="display-flex">
+          <li><a href="#tableofcontents">Table of Contents</a></li>
+          <li><a href="../index.html">Store Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container" id="tableofcontents">
+    <h2>Table of Contents</h2>
+    <div class="card soft">
+      <nav class="nav">
+        <ul>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#cards">Cards</a></li>
+          <li><a href="#navigations">Navigations</a></li>
+          <li><a href="#gridsystem">Grid System</a></li>
+          <li><a href="#products">Product Components</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#tables">Tables</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div class="container" id="typography">
+    <h2>Typography</h2>
+    <div class="card soft">
+      <h3>Headings</h3>
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+    </div>
+
+    <div class="card soft">
+      <h3>Paragraphs</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt consequatur iure ea, ducimus laboriosam labore eligendi, voluptates blanditiis placeat ab quidem quis repellat nemo dolore, culpa asperiores, reiciendis magni fugiat!</p>
+      <p class="muted">This is muted text for secondary information.</p>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="container" id="cards">
+    <h2>Cards</h2>
+    <div class="grid gap">
+      <div class="col-xs-12 col-md-4">
+        <div class="card">Card Default</div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="card soft">Card Soft</div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="card hard">Card Hard</div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="card flat">Card Flat</div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="card dark">Card Dark</div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="card medium">Card Medium</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigations -->
+  <div class="container" id="navigations">
+    <h2>Navigations</h2>
+
+    <div class="card soft">
+      <h3>Basic Nav</h3>
+      <nav class="nav">
+        <ul>
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Store</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="card soft">
+      <h3>Flex Nav</h3>
+      <nav class="nav nav-flex">
+        <ul class="display-flex">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Store</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="card soft">
+      <h3>Pills Nav</h3>
+      <nav class="nav nav-pills">
+        <ul class="display-flex">
+          <li class="active"><a href="#">All</a></li>
+          <li><a href="#">Caps</a></li>
+          <li><a href="#">Shoes</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="card soft">
+      <h3>Material Nav</h3>
+      <nav class="nav nav-material">
+        <ul class="display-flex">
+          <li class="active"><a href="#">Featured</a></li>
+          <li><a href="#">New</a></li>
+          <li><a href="#">Popular</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="card soft">
+      <h3>Breadcrumb Nav</h3>
+      <nav class="nav nav-crumbs">
+        <ul class="display-flex">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li class="active"><a href="#">Caps</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Grid System -->
+  <div class="container" id="gridsystem">
+    <h2>Grid System</h2>
+    
+    <div class="card soft">
+      <h3>Basic Grid</h3>
+      <div class="grid gap">
+        <div class="col-6"><div class="card">Column 6</div></div>
+        <div class="col-6"><div class="card">Column 6</div></div>
+      </div>
+      <div class="grid gap">
+        <div class="col-4"><div class="card">Column 4</div></div>
+        <div class="col-4"><div class="card">Column 4</div></div>
+        <div class="col-4"><div class="card">Column 4</div></div>
+      </div>
+    </div>
+
+    <div class="card soft">
+      <h3>Responsive Grid</h3>
+      <div class="grid gap">
+        <div class="col-xs-12 col-md-6"><div class="card">XS-12 MD-6</div></div>
+        <div class="col-xs-12 col-md-6"><div class="card">XS-12 MD-6</div></div>
+      </div>
+      <div class="grid gap">
+        <div class="col-xs-12 col-md-4 col-xl-3"><div class="card">Responsive</div></div>
+        <div class="col-xs-12 col-md-4 col-xl-6"><div class="card">Responsive</div></div>
+        <div class="col-xs-12 col-md-4 col-xl-3"><div class="card">Responsive</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Components -->
+  <div class="container" id="products">
+    <h2>Product Components</h2>
+
+    <div class="card soft">
+      <h3>Product Cards with Overlay</h3>
+      <div class="grid gap">
+        <div class="col-xs-12 col-md-4">
+          <figure class="figure product-overlay">
+            <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400" alt="Product">
+            <figcaption>
+              <div class="caption-body">
+                <div class="product-name">Product Name</div>
+                <div class="product-price">$25.00</div>
+                <div class="favorite" style="margin-top: 0.5em;">
+                  <input type="checkbox" id="demo-fav-1" class="hidden">
+                  <label for="demo-fav-1">♥</label>
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <figure class="figure product-overlay">
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400" alt="Product">
+            <figcaption>
+              <div class="caption-body">
+                <div class="product-name">Product Name</div>
+                <div class="product-price">$35.00</div>
+                <div class="favorite" style="margin-top: 0.5em;">
+                  <input type="checkbox" id="demo-fav-2" class="hidden">
+                  <label for="demo-fav-2">♥</label>
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <figure class="figure product-overlay">
+            <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400" alt="Product">
+            <figcaption>
+              <div class="caption-body">
+                <div class="product-name">Product Name</div>
+                <div class="product-price">$45.00</div>
+                <div class="favorite" style="margin-top: 0.5em;">
+                  <input type="checkbox" id="demo-fav-3" class="hidden">
+                  <label for="demo-fav-3">♥</label>
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="card soft">
+      <h3>Product Badges & Indicators</h3>
+      <p><span class="sale-badge">SALE</span> Sale Badge</p>
+      <p class="stock-indicator">In Stock (24 units)</p>
+      <p class="stock-indicator low">Low Stock (3 units)</p>
+      <p class="stock-indicator out">Out of Stock</p>
+    </div>
+  </div>
+
+  <!-- Forms -->
+  <div class="container" id="forms">
+    <h2>Forms</h2>
+
+    <div class="card soft">
+      <h3>Form Inputs</h3>
+      <form>
+        <div class="form-control">
+          <label class="form-label">Name</label>
+          <input type="text" placeholder="Enter your name" class="form-input">
+        </div>
+        <div class="form-control">
+          <label class="form-label">Email</label>
+          <input type="email" placeholder="Enter your email" class="form-input">
+        </div>
+        <div class="form-control">
+          <label class="form-label">Password</label>
+          <input type="password" placeholder="Enter password" class="form-input">
+        </div>
+      </form>
+    </div>
+
+    <div class="card soft">
+      <h3>Hotdog Search</h3>
+      <div class="form-control">
+        <form class="hotdog">
+          <input type="search" placeholder="Search products...">
+          <span>🔍</span>
+        </form>
+      </div>
+      <div class="form-control">
+        <form class="hotdog dark">
+          <input type="search" placeholder="Dark variant...">
+          <span>🔍</span>
+        </form>
+      </div>
+    </div>
+
+    <div class="card soft">
+      <h3>Buttons</h3>
+      <div class="form-control">
+        <button class="form-button">Primary Button</button>
+      </div>
+      <div class="form-control">
+        <a href="#" class="form-button">Link Button</a>
+      </div>
+      <div class="form-control">
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card soft">
+      <h3>Toggle Switch</h3>
+      <div class="display-flex flex-align-center">
+        <div class="flex-stretch">
+          <label for="toggle-demo" class="form-label">Enable Notifications</label>
+        </div>
+        <div class="flex-none">
+          <div class="toggle">
+            <input type="checkbox" id="toggle-demo" class="hidden">
+            <label for="toggle-demo"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card soft">
+      <h3>Select Dropdown</h3>
+      <div class="form-select">
+        <select>
+          <option>Select Size</option>
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+          <option>X-Large</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card soft">
+      <h3>Favorite/Heart Checkbox</h3>
+      <div class="favorite">
+        <input type="checkbox" id="heart-demo" class="hidden">
+        <label for="heart-demo">♥</label>
+      </div>
+      <p class="muted">Click the heart to favorite</p>
+    </div>
+  </div>
+
+  <!-- Tables -->
+  <div class="container" id="tables">
+    <h2>Tables</h2>
+
+    <div class="card soft">
+      <h3>Product Inventory Table</h3>
+      <table class="table lined border striped">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2001</td>
+            <td>Classic Snapback Cap</td>
+            <td>Caps</td>
+            <td>$25.00</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>2002</td>
+            <td>Mesh Trucker Cap</td>
+            <td>Caps</td>
+            <td>$22.00</td>
+            <td>28</td>
+          </tr>
+          <tr>
+            <td>3001</td>
+            <td>High-Top Sneakers</td>
+            <td>Shoes</td>
+            <td>$85.00</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>3002</td>
+            <td>Canvas Low-Top</td>
+            <td>Shoes</td>
+            <td>$60.00</td>
+            <td>20</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="container" style="margin-top: 3em; padding: 2em 0; border-top: 2px solid var(--color-neutral-medium); text-align: center;">
+    <p>© <span id="year"></span> LG Cool Store Styleguide</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
