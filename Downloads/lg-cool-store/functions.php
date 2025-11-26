@@ -177,4 +177,27 @@ function sortProducts($products, $sort_by = 'featured') {
     }
     return $products;
 }
+function getUniqueCategories() {
+    $conn = makePDOConn();
+    $stmt = $conn->prepare("
+        SELECT DISTINCT category 
+        FROM products 
+        WHERE category IS NOT NULL AND category != ''
+        ORDER BY category ASC
+    ");
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getPriceRange() {
+    $conn = makePDOConn();
+    $stmt = $conn->prepare("
+        SELECT 
+            MIN(price) as min_price, 
+            MAX(price) as max_price 
+        FROM products
+    ");
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 ?>
