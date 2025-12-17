@@ -47,19 +47,28 @@ $related_products = array_slice($related_products, 0, 4);
             <!-- Product Images -->
             <div class="product-images">
                 <div class="main-image">
-                    <img src="<?= e($product['image']) ?>" alt="<?= e($product['name']) ?>" id="mainImage">
+                    <img src="<?= e($product['images'][0]) ?>" alt="<?= e($product['name']) ?>" id="mainImage">
                     <?php if ($product['on_sale']): ?>
                         <span class="sale-badge-large">-<?= getDiscountPercent($product['price'], $product['sale_price']) ?>% OFF</span>
                     <?php endif; ?>
                 </div>
-                <!-- Image Grid - Shows 4 images in a 2x2 grid -->
+                
+                <!-- Responsive Thumbnail Grid - Shows all available product images -->
                 <div class="thumbnail-grid">
-                    <img src="<?= e($product['image']) ?>" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(this.src)">
-                    <img src="<?= e($product['image']) ?>" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(this.src)">
-                    <img src="<?= e($product['image']) ?>" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(this.src)">
-                    <img src="<?= e($product['image']) ?>" alt="Thumbnail 4" class="thumbnail" onclick="changeImage(this.src)">
+                    <?php 
+                    $images = $product['images'] ?? [$product['image']];
+                    foreach ($images as $index => $img): 
+                    ?>
+                        <div class="thumbnail-wrapper">
+                            <img src="<?= e($img) ?>" 
+                                 alt="<?= e($product['name']) ?> - View <?= $index + 1 ?>" 
+                                 class="thumbnail <?= $index === 0 ? 'active' : '' ?>" 
+                                 onclick="changeImage('<?= e($img) ?>', this)"
+                                 loading="<?= $index === 0 ? 'eager' : 'lazy' ?>">
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-            </div>
+            </div>  
             
             <!-- Product Info -->
             <div class="product-details">
@@ -285,11 +294,24 @@ $related_products = array_slice($related_products, 0, 4);
 <?php endif; ?>
 
 <script>
-// Image gallery
-function changeImage(src) {
-    document.getElementById('mainImage').src = src;
+// Image gallery with smooth transitions
+function changeImage(src, element) {
+    const mainImage = document.getElementById('mainImage');
+    
+    // Fade out
+    mainImage.style.opacity = '0';
+    
+    setTimeout(() => {
+        mainImage.src = src;
+        // Fade in
+        mainImage.style.opacity = '1';
+    }, 200);
+    
+    // Update active thumbnail
     document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
-    event.target.classList.add('active');
+    if (element) {
+        element.classList.add('active');
+    }
 }
 
 // Color selection
